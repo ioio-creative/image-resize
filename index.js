@@ -29,7 +29,7 @@ const batchImageResize = async _ => {
 
       // https://sharp.pixelplumbing.com/api-input
       const meta = await img.metadata();
-      const isHorizontal = meta.width > meta.height;
+      const isHorizontal = meta.width >= meta.height;
 
       if (
         (isHorizontal && meta.width > widthCeiling) ||
